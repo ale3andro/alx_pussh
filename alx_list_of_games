@@ -1,37 +1,41 @@
-0,Λαβύρινθος,games_a/alx_01_Λαβύρινθος.desktop
-1,Παζλ,games_a/alx_06_Φτιάξε_το_παζλ.desktop
-2,Μνήμη με σήματα ΚΟΚ,games_a/alx_08_Μνήμη_με_σήματα_ΚΟΚ.desktop
-3,Βρες κεφαλαία και μικρά γράμματα,games_a/alx_14_Βρες_κεφαλαία_και_μικρά_γράμματα.desktop
-4,Βάλε τα ρόδια στη θέση τους,games_a/alx_30_Βάλε_τα_ρόδια_στο_δένδρο.desktop
-5,4 Χρωμοσελίδες,games_a/alx_colorp.desktop
-6,Σπάσε τα μπαλόνια,games_a/alx_Rpcball.desktop
-7,Χρωμοσελίδα με γράμματα,games_a/alx_Rpccollet.desktop
-8,Βρες το πρώτο γράμμα της λέξης,games_a/alx_Rpcfirst.desktop
-9,Κανόνι,games_a/alx_Rpircan.desktop
-10,Ντύσε τη Νέλη στην παραλία,games_a/alx_Rsundress.desktop
-11,Λαβύρινθος ΙΙ,games_a/alx_Rtromaze.desktop
-12,Βάλε τα γράμματα στη σειρά για να φτιάξεις τη λέξη,games_a/alx_Spcletpuz.desktop
-13,Ντύσε το κορίτσι,45games/alx_04_Ντύσε_το_κορίτσι.desktop
-14,Βγάλε τον Πέρη από τη σπηλιά,45games/alx_17_Βγάλε_τον_Πέρη_από_την_σπηλιά.desktop
-15,Πύργος του Ανόι,45games/alx_24_Πύργος_του_Ανόι.desktop
-16,Χιονοπόλεμος,45games/alx_33_Χιονοπόλεμος.desktop
-17,Κούρεψε τα πρόβατα,45games/alx_37_Κούρεψε_τα_πρόβατα.desktop
-18,Κούρεψε το μπονσάι,45games/alx_39_Κούρεψε_το_μπονσάι.desktop
-19,Πιάσε τα φτερά της γαλοπούλας,45games/alx_42_Πιάσε_τα_φτερά_της_γαλοπούλας.desktop
-20,Πιασε τα Χριστουγεννιάτικα δώρα,45games/alx_43_Πιάσε_τα_Χριστουγεννιάτικα_δώρα.desktop
-21,Ποδηλατάτα με τον Πέρη,45games/alx_49_Ποδηλατάδα_με_τον_Πέρη.desktop
-22,Βρες τις διαφορές,45games/alx_50_Βρες_τις_διαφορές.desktop
-23,Βάλε τα σχήματα στη σειρά (Α τάξη),2021-10_games/alx_bale_ta_sxhmata_sth_seira.desktop
-24,Χιονοπροπαίδεια,2021-10_games/alx_chionopropaideia.desktop
-25,Ελευθέρωσε το μωρό,2021-10_games/alx_Eleu8erwse_to_mwro.desktop
-26,Κρεμάλα με Πέρη και Κάτια,2021-10_games/alx_kremala.desktop
-27,Ντύσε τον Πέρη,2021-10_games/alx_Ntuse_ton_Perh.desktop
-28,Τάνγραμ,2021-10_games/alx_tangram.desktop
-29,Γρίφοι - Λίτρα Νερό Σπηλιά,grifoi/alx_cave-puzzle.desktop
-30,Γρίφοι - Πέρασε την οικογένεια από το ποτάμι,grifoi/alx_family-river-cross.desktop
-31,Γρίφοι - Βάλε τα βατραχάκια στη σειρά,grifoi/alx_frogs.desktop
-32,Γρίφοι - Πρόβατο, λύκος, χόρτα στο ποτάμι,grifoi/alx_grifos_to_potami.desktop
-33,Απόδραση από το νησί,various/alx_island.desktop
-34,Lightbot,various/alx_lightbot-hoc2014.desktop
+0,Λαβύρινθος,SHORTCUTS/games_a/alx_01_Λαβύρινθος.desktop
+1,Παζλ,SHORTCUTS/games_a/alx_06_Φτιάξε_το_παζλ.desktop
+2,Μνήμη με σήματα ΚΟΚ,SHORTCUTS/games_a/alx_08_Μνήμη_με_σήματα_ΚΟΚ.desktop
+3,Βρες κεφαλαία και μικρά γράμματα,SHORTCUTS/games_a/alx_14_Βρες_κεφαλαία_και_μικρά_γράμματα.desktop
+4,Βάλε τα ρόδια στη θέση τους,SHORTCUTS/games_a/alx_30_Βάλε_τα_ρόδια_στο_δένδρο.desktop
+5,4 Χρωμοσελίδες,SHORTCUTS/games_a/alx_colorp.desktop
+6,Σπάσε τα μπαλόνια,SHORTCUTS/games_a/alx_Rpcball.desktop
+7,Χρωμοσελίδα με γράμματα,SHORTCUTS/games_a/alx_Rpccollet.desktop
+8,Βρες το πρώτο γράμμα της λέξης,SHORTCUTS/games_a/alx_Rpcfirst.desktop
+9,Κανόνι,SHORTCUTS/games_a/alx_Rpircan.desktop
+10,Ντύσε τη Νέλη στην παραλία,SHORTCUTS/games_a/alx_Rsundress.desktop
+11,Λαβύρινθος ΙΙ,SHORTCUTS/games_a/alx_Rtromaze.desktop
+12,Βάλε τα γράμματα στη σειρά για να φτιάξεις τη λέξη,SHORTCUTS/games_a/alx_Spcletpuz.desktop
+13,Ντύσε το κορίτσι,SHORTCUTS/45games/alx_04_Ντύσε_το_κορίτσι.desktop
+14,Βγάλε τον Πέρη από τη σπηλιά,SHORTCUTS/45games/alx_17_Βγάλε_τον_Πέρη_από_την_σπηλιά.desktop
+15,Πύργος του Ανόι,SHORTCUTS/45games/alx_24_Πύργος_του_Ανόι.desktop
+16,Χιονοπόλεμος,SHORTCUTS/45games/alx_33_Χιονοπόλεμος.desktop
+17,Κούρεψε τα πρόβατα,SHORTCUTS/45games/alx_37_Κούρεψε_τα_πρόβατα.desktop
+18,Κούρεψε το μπονσάι,SHORTCUTS/45games/alx_39_Κούρεψε_το_μπονσάι.desktop
+19,Πιάσε τα φτερά της γαλοπούλας,SHORTCUTS/45games/alx_42_Πιάσε_τα_φτερά_της_γαλοπούλας.desktop
+20,Πιασε τα Χριστουγεννιάτικα δώρα,SHORTCUTS/45games/alx_43_Πιάσε_τα_Χριστουγεννιάτικα_δώρα.desktop
+21,Ποδηλατάτα με τον Πέρη,SHORTCUTS/45games/alx_49_Ποδηλατάδα_με_τον_Πέρη.desktop
+22,Βρες τις διαφορές,SHORTCUTS/45games/alx_50_Βρες_τις_διαφορές.desktop
+23,Βάλε τα σχήματα στη σειρά (Α τάξη),SHORTCUTS/2021-10_games/alx_bale_ta_sxhmata_sth_seira.desktop
+24,Χώρισε την εικόνα στα σχήματα που την αποτελούν (Α τάξη),MENU_SHORTCUTS/alx_discover_the_shapes.desktop
+25,Χιονοπροπαίδεια,SHORTCUTS/2021-10_games/alx_chionopropaideia.desktop
+26,Ελευθέρωσε το μωρό,SHORTCUTS/2021-10_games/alx_Eleu8erwse_to_mwro.desktop
+27,Κρεμάλα με Πέρη και Κάτια,SHORTCUTS/2021-10_games/alx_kremala.desktop
+28,Ντύσε τον Πέρη,SHORTCUTS/2021-10_games/alx_Ntuse_ton_Perh.desktop
+29,Τάνγραμ,SHORTCUTS/2021-10_games/alx_tangram.desktop
+30,Γρίφοι - Λίτρα Νερό Σπηλιά,SHORTCUTS/grifoi/alx_cave-puzzle.desktop
+31,Γρίφοι - Πέρασε την οικογένεια από το ποτάμι,SHORTCUTS/grifoi/alx_family-river-cross.desktop
+32,Γρίφοι - Βάλε τα βατραχάκια στη σειρά,SHORTCUTS/grifoi/alx_frogs.desktop
+33,Γρίφοι - Πρόβατο λύκος χόρτα στο ποτάμι,SHORTCUTS/grifoi/alx_grifos_to_potami.desktop
+34,Απόδραση από το νησί,SHORTCUTS/various/alx_island.desktop
+35,Lightbot,SHORTCUTS/various/alx_lightbot-hoc2014.desktop
+36,Kidepedia,MENU_SHORTCUTS/alx_kidepedia.desktop
+37,alx Mouse Training,MENU_SHORTCUTS/alx_mouse_training.desktop
+
 
 

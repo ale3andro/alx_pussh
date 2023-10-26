@@ -1,5 +1,19 @@
 #!/bin/bash
 
+if [ $# -ne 1 ]; then
+    echo -n "Please enter a single, school number: "
+    read schoolid
+else
+    schoolid="$1"
+fi
+
+FILE=servers.$schoolid
+
+if ! [[ -f "$FILE" ]]; then
+    echo "$FILE does not exist."
+    exit
+fi
+
 declare -a alx_ids=()
 declare -a alx_actions=()
 
@@ -47,6 +61,6 @@ done
 
 echo $action_description, $action_file
 
-echo "cp /home/user/flash_games/games/SHORTCUTS/$action_file /home/user/'Επιφάνεια εργασίας'" >> __action
-./pussh -f servers -u __action
+echo "cp /home/user/flash_games/games/$action_file /home/user/'Επιφάνεια εργασίας'" >> __action
+./pussh -f $FILE -u __action
 rm __action
