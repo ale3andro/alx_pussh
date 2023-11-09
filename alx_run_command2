@@ -1,0 +1,65 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+    echo -n "Please enter a single, school number: "
+    read schoolid
+else
+    schoolid="$1"
+fi
+
+declare -a alx_ids=()
+declare -a alx_actions=()
+
+while IFS=, read -r value0 value1 value2 value3; do
+    alx_ids+=($value0)
+    alx_actions+=($value0 "$value1" "$value2" "$value3")
+done < alx_list_of_actions
+
+var=0  
+for key in "${alx_actions[@]}"
+do
+    var=$((var+1))
+    div=$((var%4))
+    if [[ "$div" -ne 0 ]]; then
+        echo -ne $key " "
+    else
+        echo ""
+    fi
+done
+
+continue="no"
+until [ $continue == "yes" ]
+do
+  read -p 'Type your preference: ' option
+  for key in "${alx_ids[@]}"
+  do
+    if [ $option == $key ]; then
+        echo Selected id is : $key
+        continue="yes"
+    fi
+  done
+done
+
+counter=0
+for key in "${alx_actions[@]}"
+do 
+    if [ $counter == $((option*4+1)) ]; then
+        action_description=$key
+    fi
+    if [ $counter == $((option*4+2)) ]; then
+        action_file=$key
+    fi
+    if [ $counter == $((option*4+3)) ]; then
+        username=$key
+    fi
+    counter=$((counter+1))
+done
+
+FILE=assets/servers/servers.$username.$schoolid
+
+if ! [[ -f "$FILE" ]]; then
+    echo "$FILE does not exist."
+    exit
+fi
+
+./pussh -f $FILE -u assets/$action_file

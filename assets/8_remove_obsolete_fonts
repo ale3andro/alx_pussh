@@ -1,0 +1,37 @@
+#!/bin/bash
+# Obsolete fonts removal - Ubuntu 22.04
+num=`sudo cat /etc/sudoers | grep "labroot ALL=NOPASSWD:" | wc -l | awk '{print $1}'`
+if [[ "$num" -eq 0 ]]; then
+    sudo echo "labroot ALL=NOPASSWD: /bin/su - user" | sudo tee -a /etc/sudoers
+    echo 'sudoers file fixed'
+else
+    echo 'sudoers file already fixed'
+fi
+
+# Default value for -c xsettings -p /Gtk/FontName is Noto Sans 9
+sudo su -c 'export DISPLAY=:0 && xfconf-query -c xsettings -p /Gtk/FontName -s "Ubuntu 10"' user
+# Default value for -c xsettings -p /Gtk/MonospaceFontName is Monospace 10
+sudo su -c 'export DISPLAY=:0 && xfconf-query -c xsettings -p /Gtk/MonospaceFontName -s "Ubuntu Mono Italic 10"' user
+# Default value for -c xfwm4 -p /general/title_font -s "Noto Sans Bold 12"
+sudo su -c 'export DISPLAY=:0 && xfconf-query -c xfwm4 -p /general/title_font -s "Ubuntu 10"' user
+
+declare -a obsoleteFonts=("mathjax" "abyssinica" "ancient-scripts" "arphic" "dejavu" "droid" "fonts-beng-extra" "fonts-deva-extra" "fonts-gujr-extra" "fonts-guru-extra" "fonts-kalapi" "fonts-orya-extra" "fonts-telu-extra" "Gargi" "Gubbi" "lao" "malayalam" "Nakula" "Navilu" "padauk" "pagul" "Sahadeva" "Sarai" "sinhala" "teluguvijayam" "tibetan-machine" "ttf-khmeros-core")
+
+mkdir -p /home/user/font_backup/
+sudo mv /usr/share/fonts/truetype/lohit-* /home/user/font_backup/ 2>/dev/null
+sudo mv /usr/share/fonts/truetype/kacst* /home/user/font_backup/ 2>/dev/null
+sudo mv /usr/share/fonts/truetype/samyak* /home/user/font_backup/ 2>/dev/null
+sudo mv /usr/share/fonts/truetype/fonts-yrsa-rasa* /home/user/font_backup/ 2>/dev/null
+sudo mv /usr/share/fonts/truetype/tlwg* /home/user/font_backup/ 2>/dev/null
+sudo mv /usr/share/fonts/truetype/noto* /home/user/font_backup/ 2>/dev/null
+sudo mv /usr/share/fonts/opentype/noto* /home/user/font_backup/opentype_noto/ 2>/dev/null
+sudo mv /usr/share/fonts/opentype/malayalam/ /home/user/font_backup/opentype_malayalam/ 2>/dev/null
+sudo mv /usr/share/fonts/opentype/urw-base35/ /home/user/font_backup/opentype_urw-base35/ 2>/dev/null
+sudo rm /usr/share/fonts/opentype/mathjax
+
+mkdir -p /home/user/font_backup/truetype_backup/
+for i in "${obsoleteFonts[@]}"; do
+    sudo mv /usr/share/fonts/truetype/$i /home/user/font_backup/truetype_backup/ 2>/dev/null
+done;
+
+sudo fc-cache -f -v

@@ -1,0 +1,10 @@
+#!/bin/bash
+# https://unix.stackexchange.com/questions/65595/how-to-know-if-a-disk-is-an-ssd-or-an-hdd
+res=`cat /sys/block/sda/queue/rotational`
+if [ $res == "1" ]; then
+    echo -e "Default \e[31m This PC has a mechanical hard disk"
+    echo -e "\e[39m"
+else
+    echo -e "Default \e[32m This PC has an SSD Disk"
+    echo -e "\e[39m"
+fi

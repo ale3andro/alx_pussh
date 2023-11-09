@@ -1,0 +1,10 @@
+0,Update apt,0_update,labroot
+1,Upgrade apt,1_upgrade,labroot
+2,Refresh snap,2_refresh_snap,labroot
+3,Install gr language support,3_language_support,labroot
+4,Clean Desktop,4_clean_desktop,user
+5,Install app bunlde on workstations,5_install_packages,labroot
+6,Check if the pc has ssd,6_has_ssd,labroot
+7,Update Mind+,7_update_mindplus,labroot
+8,Remove obsolete fonts,8_remove_obsolete_fonts,labroot
+

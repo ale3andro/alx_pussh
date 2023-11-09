@@ -1,0 +1,1 @@
+cd 'Επιφάνεια εργασίας' && find -mindepth 1 -delete

@@ -1,0 +1,1 @@
+sudo apt install -y at scrot xdotool wmctrl ttf-mscorefonts-installer gimp rar unrar openssh-server 7zip myspell-el-gr font-manager curl hardinfo gparted wine64
