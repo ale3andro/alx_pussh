@@ -10,16 +10,16 @@ fi
 declare -a alx_ids=()
 declare -a alx_actions=()
 
-while IFS=, read -r value0 value1 value2 value3; do
+while IFS=, read -r value0 value1 value2 value3 value4; do
     alx_ids+=($value0)
-    alx_actions+=($value0 "$value1" "$value2" "$value3")
+    alx_actions+=($value0 "$value1" "$value2" "$value3" "$value4")
 done < alx_list_of_actions
 
 var=0  
 for key in "${alx_actions[@]}"
 do
     var=$((var+1))
-    div=$((var%4))
+    div=$((var%5))
     if [[ "$div" -ne 0 ]]; then
         echo -ne $key " "
     else
@@ -43,14 +43,17 @@ done
 counter=0
 for key in "${alx_actions[@]}"
 do 
-    if [ $counter == $((option*4+1)) ]; then
+    if [ $counter == $((option*5+1)) ]; then
         action_description=$key
     fi
-    if [ $counter == $((option*4+2)) ]; then
+    if [ $counter == $((option*5+2)) ]; then
         action_file=$key
     fi
-    if [ $counter == $((option*4+3)) ]; then
+    if [ $counter == $((option*5+3)) ]; then
         username=$key
+    fi
+    if [ $counter == $((option*5+4)) ]; then
+        extra_arg=$key
     fi
     counter=$((counter+1))
 done
@@ -62,4 +65,24 @@ if ! [[ -f "$FILE" ]]; then
     exit
 fi
 
+#echo $action_description $action_file $username $extra_arg
+
+if [ $extra_arg == "file_picker" ]; then
+    # https://help.gnome.org/users/zenity/stable/file-selection.html.en
+    # https://stackoverflow.com/questions/16267042/bash-file-selection-by-multiple-patterns-in-zenity
+    # --file-filter=" "*.png" "*.jpg" "`
+    file_argument=`zenity --file-selection --title="Pick a wallpaper file" --file-filter=*.png`
+    case $? in
+         0)
+            echo "\"$file_argument\" selected.";;
+         1)
+            echo "No file selected. Extiting..." && exit;;
+        -1)
+            echo "An unexpected error has occurred. Exiting" && exit;;
+    esac
+    cp $file_argument /home/ale3andro/sxoleio.pw/tmp/backdrop.png
+fi
+
 ./pussh -f $FILE -u assets/$action_file
+
+echo All finished

@@ -1,0 +1,5 @@
+#!/bin/bash
+wget http://sxoleio.pw/tmp/backdrop.png
+mkdir -p /home/user/Wallpapers
+mv backdrop.png /home/user/Wallpapers
+path=`xfconf-query -l -c xfce4-desktop | grep last-image | grep -v monitor0` && xfconf-query -c xfce4-desktop -p $path -s "/home/user/Wallpapers/backdrop.png"

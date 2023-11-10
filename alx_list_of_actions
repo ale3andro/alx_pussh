@@ -1,10 +1,12 @@
-0,Update apt,0_update,labroot
-1,Upgrade apt,1_upgrade,labroot
-2,Refresh snap,2_refresh_snap,labroot
-3,Install gr language support,3_language_support,labroot
-4,Clean Desktop,4_clean_desktop,user
-5,Install app bunlde on workstations,5_install_packages,labroot
-6,Check if the pc has ssd,6_has_ssd,labroot
-7,Update Mind+,7_update_mindplus,labroot
-8,Remove obsolete fonts,8_remove_obsolete_fonts,labroot
+0,Update apt,0_update,labroot,null
+1,Upgrade apt,1_upgrade,labroot,null
+2,Refresh snap,2_refresh_snap,labroot,null
+3,Install gr language support,3_language_support,labroot,null
+4,Clean Desktop,4_clean_desktop,user,null
+5,Install app bunlde on workstations,5_install_packages,labroot,null
+6,Check if the pc has ssd,6_has_ssd,labroot,null
+7,Update Mind+,7_update_mindplus,labroot,null
+8,Remove obsolete fonts,8_remove_obsolete_fonts,labroot,null
+9,XFCE Wallpaper,9_xfce_wallpaper,user,file_picker
+10.Screenshots,10_screenshots,user,null
 

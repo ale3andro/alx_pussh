@@ -1,0 +1,6 @@
+#!/bin/bash
+PCNAME=`cat /etc/hostname` 
+DATE=`date "+%Y%m%d-%H%M%S"`
+export DISPLAY=:0 && scrot image-$PCNAME-$DATE.png
+scp user@pc$i:/home/user/imagepc$i.png $baseFolder/screenshots/imagepc$i-$DATE.png
+ssh user@pc$i 'export PCNAME=`cat /etc/hostname` && rm image$PCNAME.png'
