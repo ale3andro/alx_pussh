@@ -8,5 +8,6 @@
 7,Update Mind+,7_update_mindplus,labroot,null
 8,Remove obsolete fonts,8_remove_obsolete_fonts,labroot,null
 9,XFCE Wallpaper,9_xfce_wallpaper,user,file_picker
-10.Screenshots,10_screenshots,user,null
+10,Screenshots,10_screenshots,user,null
+11,Check package version,11_check_package_version,user,text
 

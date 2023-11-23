@@ -1,5 +1,5 @@
 #!/bin/bash
-
+clear
 if [ $# -ne 1 ]; then
     echo -n "Please enter a single, school number: "
     read schoolid
@@ -81,6 +81,13 @@ if [ $extra_arg == "file_picker" ]; then
             echo "An unexpected error has occurred. Exiting" && exit;;
     esac
     cp $file_argument /home/ale3andro/sxoleio.pw/tmp/backdrop.png
+fi
+
+if [ $extra_arg == "text" ]; then
+    echo -n "Argument (app name): "
+    read app_name
+    rm /home/ale3andro/sxoleio.pw/tmp/argument 2> /dev/null
+    echo $app_name >> /home/ale3andro/sxoleio.pw/tmp/argument
 fi
 
 ./pussh -f $FILE -u assets/$action_file

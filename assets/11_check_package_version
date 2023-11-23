@@ -1,0 +1,5 @@
+#!/bin/bash
+wget http://sxoleio.pw/tmp/argument -O argument &>/dev/null
+text=`cat argument`
+rm argument
+apt-cache show $text | grep Version
