@@ -1,0 +1,11 @@
+#!/bin/bash
+wget http://sxoleio.pw/tmp/argument -O argument &>/dev/null
+text=`cat argument`
+rm argument
+apt-cache show $text | grep Version
+
+## 0 - Create the flashplayer.desktop file and push it in /usr/share/applications
+
+## 1 - Check if the /home/user/.config/mimeapps.list exists, if not create it
+
+## 2 - Populate the above file with the 1 or 2 lines necessary

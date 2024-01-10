@@ -10,4 +10,5 @@
 9,XFCE Wallpaper,9_xfce_wallpaper,user,file_picker
 10,Screenshots,10_screenshots,user,null
 11,Check package version,11_check_package_version,user,text
+12,Flash player default for swf files,12_flashplayer_swf_default,labroot,null
 
