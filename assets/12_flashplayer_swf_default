@@ -1,10 +1,11 @@
 #!/bin/bash
-wget http://sxoleio.pw/tmp/argument -O argument &>/dev/null
-text=`cat argument`
-rm argument
-apt-cache show $text | grep Version
 
 ## 0 - Create the flashplayer.desktop file and push it in /usr/share/applications
+if [ -f "/usr/share/applications/flashplayer.desktop" ]; then
+    echo "flashplayer.desktop already exists! No need to create it..."
+else
+    sudo sudo -i && echo -e "[Desktop Entry]\nName=FlashPlayerAlex\nExec=/usr/bin/flashplayer\nTerminal=false\nType=Application\nIcon=/home/user/flash_games/flash_icon.png\nMimeType=application/x-mindplus;\nGenericName=FlashPlayerAlex\nCategories=Office;" | tee /usr/share/applications/flashplayer.desktop
+fi
 
 ## 1 - Check if the /home/user/.config/mimeapps.list exists, if not create it
 
