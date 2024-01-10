@@ -4,9 +4,16 @@
 if [ -f "/usr/share/applications/flashplayer.desktop" ]; then
     echo "flashplayer.desktop already exists! No need to create it..."
 else
-    sudo sudo -i && echo -e "[Desktop Entry]\nName=FlashPlayerAlex\nExec=/usr/bin/flashplayer\nTerminal=false\nType=Application\nIcon=/home/user/flash_games/flash_icon.png\nMimeType=application/x-mindplus;\nGenericName=FlashPlayerAlex\nCategories=Office;" | tee /usr/share/applications/flashplayer.desktop
+    echo -e "[Desktop Entry]\nName=FlashPlayerAlex\nExec=/usr/bin/flashplayer\nTerminal=false\nType=Application\nIcon=/home/user/flash_games/flash_icon.png\nMimeType=application/x-mindplus;\nGenericName=FlashPlayerAlex\nCategories=Office;" | sudo tee /usr/share/applications/flashplayer.desktop
 fi
 
 ## 1 - Check if the /home/user/.config/mimeapps.list exists, if not create it
+if [ -f "/home/user/.config/mimeapps.list" ]; then
+    echo "flashplayer.desktop already exists! No need to create it..."
+    grep '[Default Applications]' /home/user/.config/mimeapps.list | wc -l
+else
+    echo -e "[Default Applications]\napplication/vnd.adobe.flash.movie=flashplayer.desktop" | sudo tee /home/user/.config/mimeapps.list
+    sudo chown user:user /home/user/.config/mimeapps.list
+fi
 
 ## 2 - Populate the above file with the 1 or 2 lines necessary
