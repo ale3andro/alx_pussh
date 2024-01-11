@@ -9,8 +9,20 @@ fi
 
 ## 1 - Check if the /home/user/.config/mimeapps.list exists, if not create it
 if [ -f "/home/user/.config/mimeapps.list" ]; then
-    echo "flashplayer.desktop already exists! No need to create it..."
-    grep '[Default Applications]' /home/user/.config/mimeapps.list | wc -l
+    echo "mimeapps.list already exists! No need to create it..."
+    # Check if the Default Applications line exists
+    lines=`sudo grep 'Default' /home/user/.config/mimeapps.list | wc -l`
+    if [ "$lines" == 0 ]; then
+        echo "Default does not exist, I will add it now!"
+        echo -e "[Default Applications]\n" | sudo tee /home/user/.config/mimeapps.list
+        sudo chown user:user /home/user/.config/mimeapps.list
+    fi
+    lines=`sudo grep 'flash.movie' /home/user/.config/mimeapps.list | wc -l`
+    if [ "$lines" == 0 ]; then
+        echo "Flash player does not exist. I will add it now!"
+        echo -e "application/vnd.adobe.flash.movie=flashplayer.desktop" | sudo tee /home/user/.config/mimeapps.list
+        sudo chown user:user /home/user/.config/mimeapps.list
+    fi
 else
     echo -e "[Default Applications]\napplication/vnd.adobe.flash.movie=flashplayer.desktop" | sudo tee /home/user/.config/mimeapps.list
     sudo chown user:user /home/user/.config/mimeapps.list
