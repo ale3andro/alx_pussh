@@ -11,5 +11,5 @@
 10,Screenshots,10_screenshots,user,null
 11,Check package version,11_check_package_version,user,text
 12,Kill epoptes client (22.04),12_kill_epoptes_client,labroot,null
-13,Install flashplayer prerequites,13_flash_prerequisites,labroot,null
+13,UEFI or BIOS boot,13_uefi_or_bios,labroot,null
 
