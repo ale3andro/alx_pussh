@@ -12,4 +12,5 @@
 11,Check package version,11_check_package_version,user,text
 12,Kill epoptes client (22.04),12_kill_epoptes_client,labroot,null
 13,UEFI or BIOS boot,13_uefi_or_bios,labroot,null
+14,XUbuntu 24.04 set shortcuts as trusted,14_set_shortcuts_as_trusted,user,null
 

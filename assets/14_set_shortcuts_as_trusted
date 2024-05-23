@@ -1,0 +1,2 @@
+for i in `find flash_games/ -type f -name "*.desktop"`; do chmod +x "$i"; gio set -t string "$i" metadata::xfce-exe-checksum "$(sha256sum "$i" | awk '{print $1}')"; done
+
