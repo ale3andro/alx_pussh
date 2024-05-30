@@ -14,4 +14,6 @@
 13,UEFI or BIOS boot,13_uefi_or_bios,labroot,null
 14,XUbuntu 24.04 set shortcuts as trusted,14_set_shortcuts_as_trusted,user,null
 15,XUbuntu 24.04 fix desktop icons on custom iso,15_fix_desktop_icons_XUbuntu_2204,labroot,null
+16,XUbuntu 24.03 wineHQ Greek fonts,16_wineHG_greek_fonts,user,null
+
 
