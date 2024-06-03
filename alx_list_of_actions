@@ -15,5 +15,6 @@
 14,XUbuntu 24.04 set shortcuts as trusted,14_set_shortcuts_as_trusted,user,null
 15,XUbuntu 24.04 fix desktop icons on custom iso,15_fix_desktop_icons_XUbuntu_2204,labroot,null
 16,XUbuntu 24.03 wineHQ Greek fonts,16_wineHG_greek_fonts,user,null
-
+17,Change flash games shortcuts to ruffle,17_change_swf_to_ruffle,user,null
+18,Change flash games shortcuts to flash,18_change_swf_to_flashplayer,user,null
 
