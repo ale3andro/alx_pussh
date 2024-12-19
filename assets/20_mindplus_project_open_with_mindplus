@@ -1,0 +1,21 @@
+#!/bin/bash
+
+## 1 - Check if the /home/user/.config/mimeapps.list exists, if not create it
+if [ -f "/home/user/.config/mimeapps.list" ]; then
+    echo "mimeapps.list already exists! No need to create it..."
+    # Check if the Default Applications line exists
+    lines=`sudo grep 'Default' /home/user/.config/mimeapps.list | wc -l`
+    if [ "$lines" == 0 ]; then
+        echo "Default does not exist, I will add it now!"
+        echo -e "[Default Applications]\n" | sudo tee /home/user/.config/mimeapps.list
+        sudo chown user:user /home/user/.config/mimeapps.list
+    fi
+fi
+lines=`sudo grep 'x-mindplus' /home/user/.config/mimeapps.list | wc -l`
+if [ "$lines" == 0 ]; then
+    echo "Mindplus for mp files not implemented yet. I will add it now!"
+    echo -e "application/x-mindplus=mindplus.desktop" | sudo tee -a /home/user/.config/mimeapps.list
+    sudo chown user:user /home/user/.config/mimeapps.list
+else
+    echo "mp files handler already exists"
+fi
