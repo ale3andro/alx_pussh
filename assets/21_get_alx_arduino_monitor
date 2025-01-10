@@ -1,0 +1,5 @@
+#!/bin/bash
+wget http://sxoleio.pw/tmp/alx_arduino_monitor_v02
+chmod +x alx_arduino_monitor_v02
+mv alx_arduino_monitor_v02 "Επιφάνεια εργασίας"/
+

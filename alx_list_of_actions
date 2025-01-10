@@ -19,4 +19,5 @@
 18,Change flash games shortcuts to flash,18_change_swf_to_flashplayer,user,null
 19,Change the default icon of a Mind+ project,19_custom_mindplus_project_icon,user,null
 20,Change the mp files handler to Mind+,20_mindplus_project_open_with_mindplus,labroot,null
+21,Get alx_arduino_monitor_v02 and set the executable flag,21_get_alx_arduino_monitor,user,null
 
