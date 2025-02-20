@@ -1,0 +1,6 @@
+#!/bin/bash
+cd `xdg-user-dir DESKTOP` 
+for i in  *.desktop; do chmod +x "$i"; gio set -t string "$i" metadata::xfce-exe-checksum "$(sha256sum "$i" | awk '{print $1}')"; done
+
+
+

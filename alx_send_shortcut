@@ -1,0 +1,68 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+    echo -n "Please enter a single, school number: "
+    read schoolid
+else
+    schoolid="$1"
+fi
+
+FILE=assets/servers/servers.user.$schoolid
+
+if ! [[ -f "$FILE" ]]; then
+    echo "$FILE does not exist."
+    exit
+fi
+
+declare -a alx_ids=()
+declare -a alx_actions=()
+
+while IFS=, read -r value0 value1 value2; do
+    alx_ids+=($value0)
+    alx_actions+=($value0 "$value1" "$value2")
+done < alx_list_of_shortcuts
+
+var=0  
+for key in "${alx_actions[@]}"
+do
+    var=$((var+1))
+    div=$((var%3))
+    if [[ "$div" -ne 0 ]]; then
+        echo -ne $key " "
+    else
+        echo ""
+    fi
+done
+
+continue="no"
+until [ $continue == "yes" ]
+do
+  read -p 'Type your preference: ' option
+  for key in "${alx_ids[@]}"
+  do
+    if [ $option == $key ]; then
+        echo Selected id is : $key
+        continue="yes"
+    fi
+  done
+done
+
+counter=0
+for key in "${alx_actions[@]}"
+do 
+    if [ $counter == $((option*3+1)) ]; then
+        action_description=$key
+    fi
+    if [ $counter == $((option*3+2)) ]; then
+        action_file=$key
+    fi
+    counter=$((counter+1))
+done
+
+echo $action_description, $action_file
+
+#echo "cp /home/user/flash_games/games/$action_file /home/user/'Επιφάνεια εργασίας'" >> __action
+
+echo "wget http://sxoleio.pw/it/app_shortcuts/web_shortcut.desktop  && sed -i 's;http://sxoleio.pw;"$action_file";g' web_shortcut.desktop && sed -i 's;link-name;"$action_description";g' web_shortcut.desktop && chmod +x web_shortcut.desktop && mv web_shortcut.desktop \""$action_description".desktop\" && mv \""$action_description".desktop\" 'Επιφάνεια εργασίας' && cd alx_user_scripts && ./alx_desktop_shortcuts_set_as_trusted" >> __action
+./pussh -f $FILE -u __action
+rm __action
