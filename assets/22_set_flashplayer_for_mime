@@ -1,0 +1,17 @@
+#!/bin/bash
+if test -f /usr/share/applications/flashplayer.desktop; then
+  echo "flashplayer.desktop already exists"
+else
+    echo "File does not exist - I will create it and populate it"
+    echo -e "[Desktop Entry]\nName=FlashPlayerAlex\nExec=/usr/bin/flashplayer\nTerminal=false\nType=Application\nIcon=/home/user/flash_games/flash_icon.png\nMimeType=application/x-mindplus;\nGenericName=FlashPlayerAlex\nCategories=Office;" | sudo tee -a /usr/share/applications/flashplayer.desktop
+    echo "File created"
+fi
+if test -f /home/user/.config/mimeapps.list; then
+    echo "mimeapps.list exists - You must manually append to it"
+else
+    echo "mimeapps.list does not exist - I will create it and populate it"
+    echo -e "[Default Applications]\napplication/vnd.adobe.flash.movie=flashplayer.desktop" | sudo tee -a /home/user/.config/mimeapps.list
+fi
+
+
+
