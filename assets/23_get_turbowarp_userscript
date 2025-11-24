@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Download the file from sxoleio.pw
+wget http://sxoleio.pw/tmp/userscript.js
+# Check if the folder does not exist and create it
+
+# Move the file to the right folder
+mv userscript.js /home/user/.config/turbowarp-desktop/
+
+
