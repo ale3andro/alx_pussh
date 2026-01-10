@@ -1,10 +1,23 @@
 #!/bin/bash
 
 # Download the file from sxoleio.pw
-wget http://sxoleio.pw/tmp/userscript.js
-# Check if the folder does not exist and create it
+if wget http://sxoleio.pw/tmp/userscript.js > /dev/null 2>&1; then
+    echo "userscript.js download completed!"
+    # Check if the folder does not exist and create it
+    if [ ! -d "/home/user/.config/turbowarp-desktop/" ]; then
+        mkdir -p "/home/user/.config/turbowarp-desktop/"
+    fi
+    # Move the file to the right folder
+    mv userscript.js /home/user/.config/turbowarp-desktop/
+    echo "userscript.js moved to the turbowarp folder!"
+else
+    echo "userscript.js not found in sxoleio.pw/tmp"
+fi
 
-# Move the file to the right folder
-mv userscript.js /home/user/.config/turbowarp-desktop/
+
+
+
+
+
 
 
