@@ -17,16 +17,19 @@ fi
 declare -a alx_ids=()
 declare -a alx_actions=()
 
-while IFS=, read -r value0 value1 value2; do
+while IFS=, read -r value0 value1 value2 value3; do
     alx_ids+=($value0)
-    alx_actions+=($value0 "$value1" "$value2")
+    alx_actions+=($value0 "$value1" "$value2" "$value3")
 done < alx_list_of_shortcuts
+
+# Print the full array of actions
+#echo "${alx_actions[@]}"
 
 var=0  
 for key in "${alx_actions[@]}"
 do
     var=$((var+1))
-    div=$((var%3))
+    div=$((var%4))
     if [[ "$div" -ne 0 ]]; then
         echo -ne $key " "
     else
@@ -50,19 +53,24 @@ done
 counter=0
 for key in "${alx_actions[@]}"
 do 
-    if [ $counter == $((option*3+1)) ]; then
+    if [ $counter == $((option*4+1)) ]; then
         action_description=$key
     fi
-    if [ $counter == $((option*3+2)) ]; then
+    if [ $counter == $((option*4+2)) ]; then
         action_file=$key
+    fi
+    if [ $counter == $((option*4+3)) ]; then
+        action_icon=$key
     fi
     counter=$((counter+1))
 done
 
-echo $action_description, $action_file
+#echo $action_description
+#echo $action_file
+#echo $action_icon
 
 #echo "cp /home/user/flash_games/games/$action_file /home/user/'Επιφάνεια εργασίας'" >> __action
 
-echo "wget http://sxoleio.pw/it/app_shortcuts/web_shortcut.desktop  && sed -i 's;http://sxoleio.pw;"$action_file";g' web_shortcut.desktop && sed -i 's;link-name;"$action_description";g' web_shortcut.desktop && chmod +x web_shortcut.desktop && mv web_shortcut.desktop \""$action_description".desktop\" && mv \""$action_description".desktop\" 'Επιφάνεια εργασίας' && cd alx_user_scripts && ./alx_desktop_shortcuts_set_as_trusted" >> __action
+echo "wget http://sxoleio.pw/it/app_shortcuts/web_shortcut.desktop  && sed -i 's;http://sxoleio.pw;"$action_file";g' web_shortcut.desktop && sed -i 's;link-name;"$action_description";g' web_shortcut.desktop && sed -i 's;alxIcon;"$action_icon";g' web_shortcut.desktop && chmod +x web_shortcut.desktop  && chmod +x web_shortcut.desktop && mv web_shortcut.desktop \""$action_description".desktop\" && mv \""$action_description".desktop\" 'Επιφάνεια εργασίας' && cd alx_user_scripts && ./alx_desktop_shortcuts_set_as_trusted" >> __action
 ./pussh -f $FILE -u __action
 rm __action
