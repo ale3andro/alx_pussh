@@ -69,8 +69,7 @@ done
 #echo $action_file
 #echo $action_icon
 
-#echo "cp /home/user/flash_games/games/$action_file /home/user/'Επιφάνεια εργασίας'" >> __action
+echo "cp $action_file /home/user/'Επιφάνεια εργασίας'" && cd alx_user_scripts && ./alx_desktop_shortcuts_set_as_trusted" >> __action
 
-echo "wget http://sxoleio.pw/it/app_shortcuts/web_shortcut.desktop  && sed -i 's;http://sxoleio.pw;"$action_file";g' web_shortcut.desktop && sed -i 's;link-name;"$action_description";g' web_shortcut.desktop && sed -i 's;alxIcon;"$action_icon";g' web_shortcut.desktop && chmod +x web_shortcut.desktop  && chmod +x web_shortcut.desktop && mv web_shortcut.desktop \""$action_description".desktop\" && mv \""$action_description".desktop\" 'Επιφάνεια εργασίας' && cd alx_user_scripts && ./alx_desktop_shortcuts_set_as_trusted" >> __action
 ./pussh -f $FILE -u __action
 rm __action
