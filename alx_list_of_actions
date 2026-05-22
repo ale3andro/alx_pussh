@@ -22,3 +22,4 @@
 21,Get alx_arduino_monitor_v02 and set the executable flag,21_get_alx_arduino_monitor,user,null
 22,Set flashplayer as default mime action for swf files,22_set_flashplayer_for_mime,labroot,null
 23,Get userscript.js form Turbowarp and move it the user folder,23_get_turbowarp_userscript,user,null
+24,Maximize all active windows (X11 - No Wayland),24_maximize_all_windows,user,null

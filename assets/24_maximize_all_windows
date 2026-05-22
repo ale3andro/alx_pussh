@@ -1,0 +1,1 @@
+export DISPLAY=:0 && for win in $(wmctrl -l | awk '{print $1}'); do wmctrl -i -r "$win" -b add,maximized_vert,maximized_horz; done
