@@ -1,11 +1,23 @@
 #!/bin/bash
 
-if [ $# -ne 1 ]; then
+if [ $# -eq 0 ]; then
     echo -n "Please enter a single, school number: "
     read schoolid
 else
     schoolid="$1"
 fi
+
+if [[ -z "$2" ]]; then
+    emptyList=1
+    gamelist=0,1,4,10,13,14,16,21,27,28
+else
+    emptyList=0
+    gamelist="$2"
+fi
+
+echo $schoolid
+echo $gamelist
+
 
 FILE=assets/servers/servers.user.$schoolid
 
@@ -37,9 +49,13 @@ done
 continue="no"
 until [ $continue == "yes" ]
 do
-  read -p 'Type your preference: ' option
-  INPUT=$option
-  IFS="," read -r -a NUMBERS <<< "$INPUT"
+  if [ "$emptyList" -eq 0 ]; then
+    IFS="," read -r -a NUMBERS <<< "$2"
+  else 
+    read -p 'Type your preference: ' option
+    INPUT=$option
+    IFS="," read -r -a NUMBERS <<< "$INPUT"
+  fi
   for NUM in "${NUMBERS[@]}"; do
     # Strip any accidental whitespace around the number
     NUM=$(echo "$NUM" | tr -d ' ')
@@ -51,8 +67,6 @@ do
         echo Selected id is : $NUM
         continue="yes"
         
-
-
         counter=0
         for key2 in "${alx_actions[@]}"
         do 
